@@ -3,6 +3,37 @@
   --defaultMessageColor: #65608f73;
 }
 
+
+[class*="mentioned"] {
+    animation: ping-shake 1.3s ease-in-out 1 !important;
+}
+
+@keyframes ping-shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(4px); }
+    60% { transform: translateX(-1px); }
+    80% { transform: translateX(1px); }
+}
+
+
+[class^="chipletContainerInner_"]:hover > span > .unselectable__10651 {
+  max-width: 20ch;
+  margin-right: 0ch;
+  transition-delay: 0.08s;
+}
+[class^="chipletContainerInner_"] > span > img.badge__10651 {
+  margin-right: 1;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              margin 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+[class^="chipletContainerInner_"]:hover > span > img.badge__10651 {
+  transform: rotateZ(360deg);
+  margin-right: .6ch;
+  transition-delay: 0.00s;
+}
+
+
 .listItem__650eb, .vc-ranb-button {
     transition: transform 0.1s ease, filter 0.1s ease, box-shadow 0.1s !important;
 }
