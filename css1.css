@@ -1,0 +1,155 @@
+:root{
+  --selfMessageColor: #d8869f75;
+  --defaultMessageColor: #65608f73;
+}
+
+
+[class*="mentioned"] {
+    animation: ping-shake 1.3s ease-in-out 1 !important;
+}
+
+@keyframes ping-shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(4px); }
+    60% { transform: translateX(-1px); }
+    80% { transform: translateX(1px); }
+}
+
+
+[class^="chipletContainerInner_"]:hover > span > .unselectable__10651 {
+  max-width: 20ch;
+  margin-right: 0ch;
+  transition-delay: 0.08s;
+}
+[class^="chipletContainerInner_"] > span > img.badge__10651 {
+  margin-right: 1;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              margin 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+[class^="chipletContainerInner_"]:hover > span > img.badge__10651 {
+  transform: rotateZ(360deg);
+  margin-right: .6ch;
+  transition-delay: 0.00s;
+}
+
+
+.listItem__650eb, .vc-ranb-button {
+    transition: transform 0.1s ease, filter 0.1s ease, box-shadow 0.1s !important;
+}
+.listItem__650eb:hover, .vc-ranb-button:hover {
+    transform: perspective(800px) translateZ(100px) !important;
+    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.3)) !important;
+}
+.messageContent_c19a55, .headerText_c19a55, .section__1f6ca, 
+.container_a8e786, .container__9271d, .wrapper_d5f3cd, 
+.imageWrapper_af017a, .assetWrapper__31fc2, .reaction__23977 {
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+.messageContent_c19a55:hover, .headerText_c19a55:hover, 
+.section__1f6ca:hover, .container_a8e786:hover, .container__9271d:hover, 
+.imageWrapper_af017a:hover, .assetWrapper__31fc2:hover, 
+.wrapper_d5f3cd:hover, .reaction__23977:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+.avatar_c19a55, .avatarDecoration_c19a55 {
+  transform: translateY(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.avatar_c19a55:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+.avatar_c19a55:hover ~ .avatarDecoration_c19a55,
+.avatar_c19a55:hover + .avatarDecoration_c19a55 {
+  transform: translateY(-3px) !important;
+}
+.timestamp_c19a55 {
+  transform: scale(1);
+  transform-origin: left bottom;
+  transition: transform 0.2s ease;
+}
+.timestamp_c19a55:hover {
+  transform: scale(1.5);
+}
+
+#app-mount [class^="messageListItem__"][data-is-self="true"] [class*=groupStart] > [class*=contents] > [class*=markup],
+#app-mount [class*=message][data-author-self=true] [class*=groupStart] > [class*=contents] > [class*=markup]  {
+   text-align: left;
+}
+  #app-mount [class^="messageListItem__"][data-is-self="true"][class*=message][class*=selected] [class*=contents],
+  #app-mount [class*=message][class*=selected][data-author-self=true] [class*=contents] {
+    width: 100%;
+  }
+  #app-mount [class^="messageListItem__"][data-is-self="true"] [class*=replying] [class*=contents] [class*=messageContent]::before,
+  #app-mount [class^="messageListItem__"][data-is-self="true"] [class*=mentioned] [class*=contents] [class*=messageContent]::before,
+  #app-mount [class*=replying][data-author-self=true] [class*=contents] [class*=messageContent]::before,
+  #app-mount [class*=mentioned][data-author-self=true] [class*=contents] [class*=messageContent]::before {
+    left: unset;
+    right: 0;
+  }
+#app-mount [class^="messageListItem__"][data-is-self="true"] [class*=contents] [class*=messageContent],
+#app-mount [class*=message] [data-author-self=true] [class*=content] [class*=messageContent]{
+    background-color: var(--selfMessageColor) !important;
+    padding: 0.3vw 0.5vw 0.3vw 0.5vw;
+}
+  #app-mount [class^="messageListItem__"][data-is-self="true"] a:not([class*=embed] [class*=embedAuthorNameLink]),
+  #app-mount [class^="messageListItem__"][data-is-self="true"] [class*=repliedMessage]
+  #app-mount [class*=message][data-author-self=true] a:not([class*=embed] [class*=embedAuthorNameLink]),
+  #app-mount [class*=message][data-author-self=true] [class*=repliedMessage] {
+    margin-left: auto;
+  }
+  #app-mount [class^="messageListItem__"][data-is-self="true"] [class*=embedAuthor],
+  #app-mount [class*=message][data-author-self=true] [class*=embedAuthor] {
+    direction: ltr;
+  }
+  #app-mount [class*=contents] pre,
+  #app-mount [class*=message] {
+    max-width: 100%;
+  }
+  #app-mount [class*=contents] [class*=messageContent] {
+    background-color: var(--defaultMessageColor);
+    padding: 0.3vw 0.5vw 0.3vw 0.5vw;
+    margin-left: unset;
+    width: fit-content;
+    border-radius: 0.7vw;
+  }
+[class^="messageListItem__"][data-is-self="true"] [class*=compact][class*=wrapper] [class*=messageContent],
+[class*=message] [class*=compact] [class*=wrapper] [data-author-self=true] [class*=messageContent] {
+    display: flex;
+  }
+  #app-mount [class*=compact] [class*=wrapper] {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  #app-mount .mentioned__5126c .contents_c19a55 .messageContent_c19a55 {
+    background-color: var(--mention);
+  }
+  #app-mount .mentioned__5126c:hover .contents_c19a55  .messageContent_c19a55,
+  #app-mount .mentioned__5126c.selected__5126c .contents_c19a55 .messageContent_c19a55 {
+    background-color: var(--defaultMessageColor);
+  }
+  #app-mount .mentioned__5126c .contents_c19a55 .messageContent_c19a55::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    width: 3px;
+    margin: 8px 0;
+    z-index: 1;
+  }
+  #app-mount .repliedMessage_c19a55 {
+    background-color: var(--message-hover);
+    margin-bottom: 0;
+    padding: 6px;
+    border-radius: 5px;
+    width: fit-content;
+    max-width: 100%;
+  }
+[data-is-self=true] [id*=message-reply]::before{
+  display: none;
+}
